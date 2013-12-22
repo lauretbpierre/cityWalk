@@ -2,11 +2,16 @@
   "name": "application-name",
   "version": "0.0.1",
   "private": true,
-  "scripts": {
-    "start": "node app.js"
-  },
+  "main": "app.js",
   "dependencies": {
+    "bower": "1.2.8",
     "express": "3.4.7",
     "jade": "*"
+  },
+  "scripts": {
+    "postinstall": "./node_modules/bower/bin/bower install"
+  },
+  "engines": {
+    "node": "0.10.x"
   }
 }
