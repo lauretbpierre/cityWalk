@@ -1,0 +1,48 @@
+<div class="page-header">
+    <h1>Cities</h1>
+</div>
+
+<!-- Search and sort panel -->
+<div class="row">
+    <div class="panel panel-default">
+        <div class="panel-body">
+        
+            <div class="col-md-4">
+                Sorted by:
+                <select data-ng-model="orderProp">
+                    <option value="name">Name</option>
+                    <option value="country">Country</option>
+                    <option value="-rank">Ranking</option>
+                    <option value="-reviews.length">Reviews</option>
+                    <option value="-attractions.length">Attractions</option>
+                </select>
+            </div><!-- End of sort dropdown list -->
+            
+            <div class="col-md-4 col-md-offset-4">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search a city" data-ng-model="query">
+                    <span class="input-group-btn">
+                        <button class="btn btn-default" type="button">Search</button>
+                    </span>
+                </div>
+            </div><!-- End of search input -->
+            
+        </div>
+    </div><!-- End of panel -->
+</div>
+
+<!-- List of all cities -->
+<div class="row">
+    <div class="media" data-ng-repeat="city in cities | filter:{name: query} | orderBy:orderProp">
+        <a class="pull-left" href="#/city/{{city._id}}">
+            <img class="media-object" src="http://placehold.it/64x64" alt="holder">
+        </a>
+        
+        <div class="media-body">
+            <h4 class="media-heading">{{ city.name }}, {{ city.country }} {{ city.rank }}</h4>
+            <p>{{ city.reviews.length }} reviews {{ city.attractions.length }} attractions</p>
+        </div>
+    </div><!-- End of a city description -->
+</div>
+
+<p>&nbsp;</p>

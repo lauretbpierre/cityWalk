@@ -1,0 +1,32 @@
+doctype 5
+html(lang='en' data-ng-app='cityWalkApp')
+    head
+        meta(charset='utf-8')
+        meta(name='viewport', content='width=device-width, initial-scale=1, user-scalable=no')
+        
+        title CityWalk
+        
+        link(rel='stylesheet', href='/lib/bootstrap/dist/css/bootstrap.min.css', type='text/css')
+        link(rel='stylesheet', href='/stylesheets/style.css', type='text/css')
+        
+        script(src='/lib/angular/angular.min.js')
+        script(src='/lib/angular-resource/angular-resource.min.js')
+        script(src='/lib/angular-route/angular-route.min.js')
+        script(src='/lib/jquery/jquery.min.js')
+        script(src='/lib/bootstrap/dist/js/bootstrap.min.js')
+        
+        script(src='/javascripts/app.js')
+        script(src='/javascripts/controllers.js')
+        script(src='/javascripts/services.js')
+
+    body
+        nav.navbar.navbar-default.navbar-static-top(role='navigation')
+            div.navbar-header
+                a.navbar-brand(href='#') CityWalk
+            div.collapse.navbar-collapse
+                ul.nav.navbar-nav
+                    li
+                        a(href='#') Cities
+                    li
+                        a(href='#') Attractions
+        div.container(data-ng-view)
